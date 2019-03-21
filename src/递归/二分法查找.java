@@ -15,7 +15,7 @@ public class 二分法查找 {
     static int binarySearch(int[] arr, int low, int high, int key) {
         if (low > high)
             return -1;
-        int mid = low + ((high - low) >> 1);//(low+hige)>>>1;防止溢出位移也更高效
+        int mid = low + ((high - low) >> 1);//(low+high)>>>1;防止溢出位移也更高效
         int midVal = arr[mid];
         if (midVal < key)
             return binarySearch(arr, mid + 1, high, key);

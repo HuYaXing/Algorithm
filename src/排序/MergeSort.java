@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 /**
  * 思路：将数组分为左右两个子数组，递归调用归并进行排序<br />
- *      分别排序完成后，使用辅助的合并函数将两个有序的子数组合并成一个整体有序的数组<br />
+ * 分别排序完成后，使用辅助的合并函数将两个有序的子数组合并成一个整体有序的数组<br />
  * 时间复杂度：均：O(nlgn)，好：O(nlgn)，坏：O(nlgn)<br />
  * 空间复杂度：需要开辟辅助空间，该辅助空间可以重用，大小为N<br />
  * 非原址排序<br />
@@ -30,7 +30,7 @@ public class MergeSort {
 
     private static void sort(int[] A, int p, int r) {
         if (p < r) {
-            int mid = p + ((r - p) >> 1);
+            int mid = p + ((r - p) >> 1);//向下取整（/2）
             sort(A, p, mid); //对左侧排序
             sort(A, mid + 1, r);//对右侧排序
             merge(A, p, mid, r);//合并
@@ -39,15 +39,16 @@ public class MergeSort {
 
     static int niXu = 0;
     /**
-     *假设数组的两段分别有序，借助一个辅助数组来缓存原数组，用归并的思路将元素从辅助数组中拷贝回原数组
-     *@param A 原数组
-     *@param p 低位
-     *@param mid 中间位
-     *@param r 高位
+     * 假设数组的两段分别有序，借助一个辅助数组来缓存原数组，用归并的思路将元素从辅助数组中拷贝回原数组
+     *
+     * @param A   原数组
+     * @param p   低位
+     * @param mid 中间位
+     * @param r   高位
      **/
     private static void merge(int[] A, int p, int mid, int r) {
         //拷贝到辅助空间的相同位置
-        System.arraycopy(A, p, helper, p, r - p + 1);
+        System.arraycopy(A, p , helper, p, r - p + 1);
         //辅助数组的两个指针
         int left = p, right = mid + 1;
         //原始数组的指针
@@ -69,11 +70,10 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 1, 12, 5, 1, 56, 2, 4 ,1};
+        int[] arr = {2, 3, 1, 12, 5, 1, 56, 2, 4, 1};
         System.out.println(Arrays.toString(arr));
         sort(arr);
-//        System.out.println(Arrays.toString(arr));
-//        Assertions.assertThat(Util.checkOrdered(arr, true)).isTrue();
-//        System.out.println("nixu:" + niXu);
+        System.out.println(Arrays.toString(arr));
+        System.out.println("nixu:" + niXu);
     }
 }

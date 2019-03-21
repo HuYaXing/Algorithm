@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author:胡亚星
  * @createTime 2019-02-26 9:14
- * @description:
+ * @description: 二分查找算法
  **/
 public class BinarySearch {
     public static void main(String[] args) {
@@ -49,7 +49,7 @@ public class BinarySearch {
         }
     }
 
-    //二分查找算法
+    //二分查找算法（有序的时候）
     public static int binarySearch(int[] arr, int num) {
 
         int low = 0;
@@ -60,7 +60,7 @@ public class BinarySearch {
                 low = mid + 1;
             } else if (arr[mid] > num) {
                 upper = mid - 1;
-            } else {
+            } else {//相等
                 return mid;
             }
 

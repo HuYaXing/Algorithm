@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author:胡亚星
  * @createTime 2019-02-27 11:22
- * @description:
+ * @description: 有m个还鞋的，n个租鞋的。问有多少种站法
  **/
 public class Main {
 
@@ -23,7 +23,7 @@ public class Main {
      * @return
      */
     static int f(int m, int n) {
-        if (n > m) return 0;
+        if (n > m) return 0;//租鞋的比还鞋的多
         if (n == 0) return 1;
         return f(m - 1, n) + f(m, n - 1);
     }

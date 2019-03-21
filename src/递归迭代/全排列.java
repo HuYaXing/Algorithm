@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class 全排列 {
 
     public static void main(String[] args) {
-//        System.out.println(getPermutation("ABCD", 4));
+        System.out.println(getPermutation("ABCD", 4));
 
-        String s = "123";
-        permutation("",s.toCharArray());
+//        String s = "123";
+//        permutation("",s.toCharArray());
 
     }
 

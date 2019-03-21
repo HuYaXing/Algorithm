@@ -5,10 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int a = Integer.parseInt("00000000000000000000000000000100", 2);
-        System.out.println(a);
-        System.out.println(2 >>> 1);
-
+//        int a = Integer.parseInt("00000000000000000000000000000100", 2);
+//        System.out.println(a);
+//        System.out.println(2 >>> 1);
+//
+        System.out.println(0 + ((3 - 0) >> 1));
 //        String s = String.format("Hello %s%s%s", "jerry-", "li", ",welcome!");
 //        String s1 = String.format("Hello %2$s%3$s%1$s", "li-", "heng-", "jie");
 //
